@@ -17,7 +17,7 @@ const Seo: React.FC<SEOProps> = ({ title, description, image }) => {
   const defaultDescription =
     "Welcome to sankaralingam seranthian portfolio site!";
   const siteUrl = "https://sankaralingam-seranthian.web.app/";
-  const defaultImage = process.env.NODE_ENV === 'development' ? "/images/sankaralingam-portfolio.png" : "./images/sankaralingam-portfolio.png";
+  const defaultImage = 'sankaralingam-portfolio.png';
   const twitterUsername = "@sankar_seran";
 
   const seo = {

@@ -158,12 +158,12 @@ type NavProps = {
   isHome?: boolean;
 };
 
-const Nav: React.FC<NavProps> = ({ isHome = false }) => {
+const Nav: React.FC<NavProps> = () => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const scrollDirection = useScrollDirection();
   // const prefersReducedMotion = usePrefersReducedMotion();
   // const pathname = usePathname();
-  console.log("isHome: ", isHome);
+  // console.log("isHome: ", isHome);
 
   useEffect(() => {
     const handleScroll = () => {

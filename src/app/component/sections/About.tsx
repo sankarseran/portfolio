@@ -3,8 +3,10 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import meImage from 'images/me.jpg';
 import { usePrefersReducedMotion } from "@/app/hooks";
+import { firebaseImageLoader } from "@/app/utils";
+import loadScrollReveal from "@/app/utils/sr";
+import { srConfig } from "@/app/config";
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -121,9 +123,16 @@ const About: React.FC = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (prefersReducedMotion || !revealContainer.current) return;
+    const revealElements = async () => {
+      if (prefersReducedMotion || !revealContainer.current) {
+        return;
+      }
 
-    // sr.reveal(revealContainer.current, srConfig());
+      const scrollReveal = await loadScrollReveal(window);
+      scrollReveal?.reveal(revealContainer.current, srConfig());
+    };
+
+    revealElements();
   }, [prefersReducedMotion]);
 
   const skills = [
@@ -237,7 +246,8 @@ const About: React.FC = () => {
           <div className="wrapper">
             <Image
               className="img"
-              src={process.env.NODE_ENV === 'development' ? "/images/me.jpg" : "./images/me.jpg"}
+              loader={firebaseImageLoader}
+              src={"/me.jpg"}
               width={500}
               height={500}
               quality={95}

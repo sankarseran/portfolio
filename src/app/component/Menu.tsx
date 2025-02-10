@@ -218,7 +218,7 @@ const Menu: React.FC = () => {
                 ))}
               </ol>
             )}
-            <a href="/resume.pdf" className="resume-link">
+            <a href="/files/cv.pdf" target="_blank" className="resume-link">
               Resume
             </a>
           </nav>

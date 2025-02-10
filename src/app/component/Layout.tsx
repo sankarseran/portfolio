@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "../styles";
 import { usePathname } from "next/navigation"; // ✅ Correct hook for Next.js App Router
-import { Head, Loader, Nav, Social, Email, Footer } from "./index";
+import { Loader, Nav, Social, Email, Footer } from "./index";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -47,7 +47,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <html lang="en">
-      <Head />
       <body>
         <ThemeProvider theme={theme}>
           <GlobalStyle />

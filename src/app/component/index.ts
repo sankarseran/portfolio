@@ -11,3 +11,4 @@ export { default as Layout } from './Layout';
 export { default as Name } from './sections/Name';
 export { default as About } from './sections/About';
 export { default as Jobs } from './sections/Work';
+export { default as Contact } from './sections/Contact';
