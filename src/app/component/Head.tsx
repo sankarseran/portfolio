@@ -13,11 +13,12 @@ const Seo: React.FC<SEOProps> = ({ title, description, image }) => {
   const router = usePathname();
 
   // Replace with your actual metadata (used to be in Gatsby `siteMetadata`)
-  const defaultTitle = "My Awesome Website";
-  const defaultDescription = "Welcome to my amazing Next.js site!";
-  const siteUrl = "https://mywebsite.com";
-  const defaultImage = "/default-image.jpg";
-  const twitterUsername = "@mytwitterhandle";
+  const defaultTitle = "sankaralingam seranthian portfolio";
+  const defaultDescription =
+    "Welcome to sankaralingam seranthian portfolio site!";
+  const siteUrl = "https://sankaralingam-seranthian.web.app/";
+  const defaultImage = process.env.NODE_ENV === 'development' ? "/images/sankaralingam-portfolio.png" : "./images/sankaralingam-portfolio.png";
+  const twitterUsername = "@sankar_seran";
 
   const seo = {
     title: title || defaultTitle,
@@ -49,7 +50,7 @@ const Seo: React.FC<SEOProps> = ({ title, description, image }) => {
       {/* Google Site Verification (if needed) */}
       <meta
         name="google-site-verification"
-        content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk"
+        content="2T3UFxVzTBVSwI-yCgLOtkFLB3fKZvf2M20sPdQG7ek"
       />
     </Head>
   );

@@ -4,11 +4,11 @@ export const config = {
 export const socialMedia = [
   {
     name: "GitHub",
-    url: "https://github.com/sanksrseran",
+    url: "https://github.com/sankarseran",
   },
   {
     name: "Linkedin",
-    url: "https://www.linkedin.com/in/https://www.linkedin.com/in/sankaralingam-seranthian-625086a3/",
+    url: "https://www.linkedin.com/in/sankaralingam-seranthian-625086a3/",
   },
 ] as const;
 

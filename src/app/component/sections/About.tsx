@@ -3,9 +3,8 @@
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import styled from "styled-components";
+import meImage from 'images/me.jpg';
 import { usePrefersReducedMotion } from "@/app/hooks";
-// import sr from "@/app/utils/sr";
-import { srConfig } from "@/app/config";
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
@@ -127,13 +126,61 @@ const About: React.FC = () => {
     // sr.reveal(revealContainer.current, srConfig());
   }, [prefersReducedMotion]);
 
-  const skills: string[] = [
-    "JavaScript (ES6+)",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Node.js",
-    "Tailwind CSS",
+  const skills = [
+    {
+      category: "Front-End",
+      skills: ["Angular", "React.js", "Next.js", "Tailwind CSS", "Vue.js"],
+    },
+    {
+      category: "Back-End",
+      skills: ["Express.js", "Nest.js", "Hapi.js", "Node.js", "Microservices"],
+    },
+    {
+      category: "Databases",
+      skills: [
+        "MongoDB",
+        "Firebase DB",
+        "PostgreSQL",
+        "DynamoDB",
+        "Elastic Search",
+        "MySQL",
+      ],
+    },
+    {
+      category: "Cloud & DevOps",
+      skills: [
+        "AWS (RDS, S3, EC2)",
+        "Kubernetes",
+        "Firebase",
+        "Docker",
+        "Azure",
+      ],
+    },
+    {
+      category: "UI Libraries & Tools",
+      skills: [
+        "Angular Material",
+        "Ant Design",
+        "PrimeVue",
+        "Postman",
+        "Bitbucket",
+        "Visual Studio Code",
+        "GIT (GitHub, GitLab)",
+      ],
+    },
+    {
+      category: "Programming Languages & Styles",
+      skills: [
+        "JavaScript",
+        "TypeScript",
+        "Java",
+        "C# .Net",
+        "HTML",
+        "CSS",
+        "SAAS",
+        "SCSS",
+      ],
+    },
   ];
 
   return (
@@ -142,12 +189,10 @@ const About: React.FC = () => {
 
       <div className="inner">
         <StyledText>
-          <div>
+          <div style={{ marginBottom: "10px" }}>
             <h2>About Me</h2>
-            <p>
-              Hi, you can call me sankar.
-            </p>
-            <p style={{ marginBottom: "5px"}}>
+            <p>Hi, you can call me sankar.</p>
+            <p style={{ marginBottom: "5px" }}>
               Innovative and detail-oriented Full Stack Developer with 8+ years
               of experience designing, developing, and optimizing scalable,
               secure, and high-performance web applications. Passionate about
@@ -192,11 +237,11 @@ const About: React.FC = () => {
           <div className="wrapper">
             <Image
               className="img"
-              src={"/images/me.jpg"}
+              src={process.env.NODE_ENV === 'development' ? "/images/me.jpg" : "./images/me.jpg"}
               width={500}
               height={500}
               quality={95}
-              alt="Headshot"
+              alt="sankar profile picture"
             />
           </div>
         </StyledPic>
@@ -206,83 +251,16 @@ const About: React.FC = () => {
           <h2>Skills</h2>
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
-            {/* Front-End Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>Front-End:</h3>
-              <ul className="skills-list">
-                <li>Angular</li>
-                <li>React.js</li>
-                <li>Next.js</li>
-                <li>Tailwind CSS</li>
-                <li>Vue.js</li>
-              </ul>
-            </div>
-
-            {/* Back-End Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>Back-End:</h3>
-              <ul className="skills-list">
-                <li>Express.js</li>
-                <li>Nest.js</li>
-                <li>Hapi.js</li>
-                <li>Node.js</li>
-                <li>Microservices</li>
-              </ul>
-            </div>
-
-            {/* Databases Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>Databases:</h3>
-              <ul className="skills-list">
-                <li>MongoDB</li>
-                <li>Firebase DB</li>
-                <li>PostgreSQL</li>
-                <li>DynamoDB</li>
-                <li>Elastic Search</li>
-                <li>MySQL</li>
-              </ul>
-            </div>
-
-            {/* Cloud & DevOps Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>Cloud & DevOps:</h3>
-              <ul className="skills-list">
-                <li>AWS (RDS, S3, EC2)</li>
-                <li>Kubernetes</li>
-                <li>Firebase</li>
-                <li>Docker</li>
-                <li>Azure</li>
-              </ul>
-            </div>
-
-            {/* UI Libraries & Tools Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>UI Libraries & Tools:</h3>
-              <ul className="skills-list">
-                <li>Angular Material</li>
-                <li>Ant Design</li>
-                <li>PrimeVue</li>
-                <li>Postman</li>
-                <li>Bitbucket</li>
-                <li>Visual Studio Code</li>
-                <li>GIT (GitHub, GitLab)</li>
-              </ul>
-            </div>
-
-            {/* Programming Languages & Styles Skills */}
-            <div style={{ flex: "1 1 200px" }}>
-              <h3>Programming Languages & Styles:</h3>
-              <ul className="skills-list">
-                <li>JavaScript</li>
-                <li>TypeScript</li>
-                <li>Java</li>
-                <li>C# .Net</li>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>SAAS</li>
-                <li>SCSS</li>
-              </ul>
-            </div>
+            {skills.map((skillGroup, index) => (
+              <div key={index} style={{ flex: "1 1 200px" }}>
+                <h3>{skillGroup.category}:</h3>
+                <ul className="skills-list">
+                  {skillGroup.skills.map((skill, skillIndex) => (
+                    <li key={skillIndex}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </StyledText>

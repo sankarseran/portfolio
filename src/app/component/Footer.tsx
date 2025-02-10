@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { socialMedia } from "../config";
 import { IconGitHub, IconLinkedin } from "./icons";
@@ -8,11 +8,6 @@ import { IconGitHub, IconLinkedin } from "./icons";
 interface SocialMediaItem {
   name: string;
   url: string;
-}
-
-interface GitHubInfo {
-  stars: number | null;
-  forks: number | null;
 }
 
 const StyledFooter = styled.footer`
@@ -79,27 +74,6 @@ const StyledCredit = styled.div`
 `;
 
 const Footer: React.FC = () => {
-  const [githubInfo, setGitHubInfo] = useState<GitHubInfo>({
-    stars: null,
-    forks: null,
-  });
-
-  useEffect(() => {
-    if (process.env.NODE_ENV !== "production") {
-      return;
-    }
-    fetch("https://api.github.com/repos/bchiang7/v4")
-      .then((response) => response.json())
-      .then((json) => {
-        const { stargazers_count, forks_count } = json;
-        setGitHubInfo({
-          stars: stargazers_count,
-          forks: forks_count,
-        });
-      })
-      .catch((e) => console.error(e));
-  }, []);
-
   return (
     <StyledFooter>
       <StyledSocialLinks>
@@ -116,21 +90,8 @@ const Footer: React.FC = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabIndex={-1}>
-        <a href="https://github.com/sankarseran">
+        <a href="https://github.com/sankarseran/portfolio" target="_blank">
           <div>Built by Sankaralingam Seranthian</div>
-
-          {githubInfo.stars && githubInfo.forks && (
-            <div className="github-stats">
-              <span>
-                {/* <Icon name="Star" /> */}
-                <span>{githubInfo.stars.toLocaleString()}</span>
-              </span>
-              <span>
-                {/* <Icon name="Fork" /> */}
-                <span>{githubInfo.forks.toLocaleString()}</span>
-              </span>
-            </div>
-          )}
         </a>
       </StyledCredit>
     </StyledFooter>
