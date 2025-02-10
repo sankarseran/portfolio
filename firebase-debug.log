@@ -1,0 +1,48 @@
+[debug] [2025-02-10T16:05:44.894Z] ----------------------------------------------------------------------
+[debug] [2025-02-10T16:05:44.899Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sankaralingamseranth\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-02-10T16:05:44.899Z] CLI Version:   13.29.3
+[debug] [2025-02-10T16:05:44.900Z] Platform:      win32
+[debug] [2025-02-10T16:05:44.900Z] Node Version:  v20.10.0
+[debug] [2025-02-10T16:05:44.900Z] Time:          Mon Feb 10 2025 17:05:44 GMT+0100 (Central European Standard Time)
+[debug] [2025-02-10T16:05:44.900Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-10T16:05:45.123Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-10T16:05:45.124Z] > authorizing via signed-in user (sankaralingam.psg@gmail.com)
+[debug] [2025-02-10T16:05:45.124Z] [iam] checking project sankaralingam-seranthian for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-02-10T16:05:45.149Z] Checked if tokens are valid: false, expires at: 1739137848222
+[debug] [2025-02-10T16:05:45.150Z] Checked if tokens are valid: false, expires at: 1739137848222
+[debug] [2025-02-10T16:05:45.150Z] > refreshing access token with scopes: []
+[debug] [2025-02-10T16:05:45.152Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-02-10T16:05:45.152Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-10T16:05:45.399Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-02-10T16:05:45.400Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-02-10T16:05:45.410Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/sankaralingam-seranthian:testIamPermissions [none]
+[debug] [2025-02-10T16:05:45.410Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/sankaralingam-seranthian:testIamPermissions x-goog-quota-user=projects/sankaralingam-seranthian
+[debug] [2025-02-10T16:05:45.410Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sankaralingam-seranthian:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-10T16:05:46.238Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/sankaralingam-seranthian:testIamPermissions 200
+[debug] [2025-02-10T16:05:46.238Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/sankaralingam-seranthian:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-02-10T16:05:46.239Z] Checked if tokens are valid: true, expires at: 1739207144400
+[debug] [2025-02-10T16:05:46.239Z] Checked if tokens are valid: true, expires at: 1739207144400
+[debug] [2025-02-10T16:05:46.239Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/sankaralingam-seranthian [none]
+[debug] [2025-02-10T16:05:46.552Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/sankaralingam-seranthian 200
+[debug] [2025-02-10T16:05:46.553Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/sankaralingam-seranthian {"projectId":"sankaralingam-seranthian","projectNumber":"501203734763","displayName":"sankaralingam-seranthian","name":"projects/sankaralingam-seranthian","resources":{"hostingSite":"sankaralingam-seranthian"},"state":"ACTIVE","etag":"1_1b690b38-ed3e-4ad3-9627-72b25b1deb92"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-02-10T16:06:01.305Z] Checked if tokens are valid: true, expires at: 1739207144400
+[debug] [2025-02-10T16:06:01.305Z] Checked if tokens are valid: true, expires at: 1739207144400
+[debug] [2025-02-10T16:06:01.306Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/sankaralingam-seranthian/sites/sankaralingam-seranthian [none]
+[debug] [2025-02-10T16:06:02.489Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/sankaralingam-seranthian/sites/sankaralingam-seranthian 200
+[debug] [2025-02-10T16:06:02.489Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/sankaralingam-seranthian/sites/sankaralingam-seranthian {"name":"projects/sankaralingam-seranthian/sites/sankaralingam-seranthian","defaultUrl":"https://sankaralingam-seranthian.web.app","type":"DEFAULT_SITE"}
+[info]    ▲ Next.js 15.1.6
+
+[info] 
+
