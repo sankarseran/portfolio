@@ -12,9 +12,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://sankaralingam-seranthian.web.app/";
+const defaultTitle = "Sankaralingam Seranthian Portfolio";
+const defaultDescription =
+  "Welcome to Sankaralingam Seranthian's portfolio site!";
+const defaultImage = `${siteUrl}demo.png`;
+const twitterUsername = "@sankar_seran";
+
 export const metadata: Metadata = {
-  title: "sankaralingam seranthian portfolio",
-  description: "Welcome to sankaralingam seranthian portfolio site!",
+  title: defaultTitle,
+  description: defaultDescription,
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: siteUrl,
+    type: "website",
+    images: [
+      {
+        url: defaultImage,
+        width: 1200,
+        height: 630,
+        alt: "Sankaralingam Seranthian Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: twitterUsername,
+    creator: twitterUsername,
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [defaultImage],
+  },
+  verification: {
+    google: "2T3UFxVzTBVSwI-yCgLOtkFLB3fKZvf2M20sPdQG7ek", // Google Site Verification
+  },
 };
 
 export default function RootLayout({
